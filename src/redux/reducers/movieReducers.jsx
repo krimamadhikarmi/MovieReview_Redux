@@ -5,18 +5,23 @@ const initialState = {
 };
 
 const movieReducer = (state = initialState, action) => {
-  if (action.type === FETCH_MOVIE_REQUEST) {
-    return { ...state, movies: action.payload };
-  } else if (action.type === ADD_REVIEW) {  
-    return {
-      ...state,
-      movies: state.movies.map(movie =>
-        movie.mid === action.payload.id ? {
-          ...movie,
-          reviews: [...movie.reviews, action.payload],
-        } : movie
-      ),
-    }; 
+  switch (action.type) {
+    case FETCH_MOVIE_REQUEST:
+      return { ...state, movies: action.payload };
+    case ADD_REVIEW:
+      return {
+        ...state,
+        movies: state.movies.map((movie) =>
+          movie.mid === action.payload.id
+            ? {
+                ...movie,
+                reviews: [...movie.reviews, action.payload],
+              }
+            : movie
+        ),
+      };
+    default:
+      return state;
   }
 };
 

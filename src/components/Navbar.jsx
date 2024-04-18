@@ -2,7 +2,7 @@ import React from "react";
 
 export function Tittle() {
   return (
-    <div className="header py-6 bg-black fixed-top-0 z-0">
+    <div className="header py-6 bg-amber-950">
       <h1
         className="text-5xl text-center text-white ml-10 font-bold"
         style={{ fontFamily: "Sedan, serif" }}

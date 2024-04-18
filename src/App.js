@@ -5,10 +5,12 @@ import { Tittle } from './components/Navbar';
 
 function App() {
   return (
-    <div className="App bg-amber-100 min-h-screen">
+    <div className="App bg-amber-100">
       <Tittle/>
-      
+      <div className='pt-24'>
       <MovieList />
+      </div>
+      
       {/* <ReviewForm/> */}
     </div>
   );

@@ -41,7 +41,7 @@ export function Movie({ movie }) {
         }
       });
     },
-    [movie]
+    [movie, dispatch]
   );
 
   return (
@@ -87,13 +87,15 @@ export function Movie({ movie }) {
             {movie.overview}
           </p>
         </div>
-        <hr className="border-[#885133]"/>
+        <hr className="border-[#885133]" />
 
         <div
           className="mb-4 overflow-auto text-white"
           style={{ fontFamily: "Quicksand, sans-serif" }}
         >
-          <p className="font-bold text-[#885133] mt-2" >Review Count: {reviews?.length}</p>
+          <p className="font-bold text-[#885133] mt-2">
+            Review Count: {reviews?.length}
+          </p>
           <h3 className="font-bold text-xl text-[#885133] mb-4 mt-2 text-center">
             Reviews
           </h3>

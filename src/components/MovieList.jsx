@@ -1,3 +1,4 @@
+// MovieList.jsx
 import React, { useEffect } from "react";
 import { Movie } from "./Movie";
 import { fetchMovieRequest } from "../redux/actions/movieActions";
@@ -13,7 +14,7 @@ export function MovieList() {
   }, [dispatch]);
 
   return (
-    <div className="px-6 mt-12 ml-2 grid grid-cols-2  sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 overflow-y-auto ">
+    <div className="container mx-auto px-2 sm:px-4 mt-12 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
       {movies?.map((movie) => (
         <Movie movie={movie} key={movie.id} />
       ))}

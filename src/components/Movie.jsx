@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { ReviewForm } from "./ReviewForm";
 import { ReviewList } from "./ReviewList";
+import { useSelector,useDispatch} from "react-redux";
+import { addReviewnew } from "../redux/actions/movieActions";
 
 export function Movie({ movie }) {
   const [reviews, setReviews] = useState([]);
 
+  const dispatch = useDispatch();
   useEffect(() => {
     if (movie?.reviews?.length > 0) {
       setReviews(movie.reviews);
@@ -29,15 +32,20 @@ export function Movie({ movie }) {
       cache: "default",
     }).then((response) => {
       if (response.ok) {
-        // setMovieId("");
-
-        setReviews([
-          ...reviews,
-          {
-            description: reviewText,
-          },
-        ]);
-        setNewReview("");
+        
+        // setReviews([
+        //   ...reviews,
+        //   {
+        //     description: reviewText,
+        //   },
+        // ]);
+        
+        const addedreview = {
+          id: movie.mid,
+          description: reviewText,
+        }
+        dispatch(addReviewnew(addedreview))
+        setNewReview("")
       }
     });
   }

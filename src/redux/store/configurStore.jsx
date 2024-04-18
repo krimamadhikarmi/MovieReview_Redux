@@ -1,5 +1,5 @@
-import postReducer from "../reducers/movieReducers";
+import movieReducer from "../reducers/movieReducers";
 import { createStore } from "redux";
 
-const store = createStore(postReducer);
+const store = createStore(movieReducer);
 export default store;

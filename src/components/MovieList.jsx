@@ -4,7 +4,7 @@ import { fetchMovieRequest } from "../redux/actions/movieActions";
 import { useDispatch, useSelector } from "react-redux";
 
 export function MovieList() {
-  const movies = useSelector((state) => state?.movie);
+  const movies = useSelector((state) => state?.movies);
   const dispatch = useDispatch();
   useEffect(() => {
     fetch("http://localhost:3000/api/v1/movies/all/movie_reviews")

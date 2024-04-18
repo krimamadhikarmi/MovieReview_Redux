@@ -1,10 +1,7 @@
 import { useState } from "react";
 
-
 export function ReviewForm({addReview}) {
   const [newreview, setNewReview] = useState("");
-  
-
   return (
     <>
     <form>
